@@ -39,7 +39,10 @@ cf.[hearcombo/devise](https://github.com/heartcombo/devise)を導入する。
 ## Debugbarを導入
 [debugbar](https://debugbar.dev/docs/installation/)の手順通り導入。
 
-## ToDoアプリを作成
+## 簡易的なCRUDを作成
+CMSっぽいものを実装。
+
+## N+1問題を解消
 
 ## Redisの導入
 
@@ -54,8 +57,6 @@ cf.[hearcombo/devise](https://github.com/heartcombo/devise)を導入する。
 ## Github ActionsでCIを導入
 
 ## Reactを導入
-
-## N+1を検知・対応
 
 ## // TBD: Railsの機能をあれこれ使ってみる
 factory bot, decorator, i18n, rails engine, validation
