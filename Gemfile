@@ -62,3 +62,7 @@ end
 
 
 gem "devise", "~> 4.9"
+
+group :development do
+  gem 'debugbar'
+end
