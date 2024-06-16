@@ -10,17 +10,17 @@ Ruby on Railsでマルチテナントアーキテクチャを実装し、Rails�
 ## 準備
 1. gem install rails
 
-## 初期プロジェクトコード生成
+## 初期プロジェクトコード生成 cf. https://github.com/bmf-san/sandbox-rails-multi-tenant-architecture/pull/1
 1. rails new . --skip-bundle --skip-test --skip-turbolinks --skip-webpack-install --database=postgresql
 2. bundle install
 
-## DBセットアップ
+## DBセットアップ cf. https://github.com/bmf-san/sandbox-rails-multi-tenant-architecture/pull/1
 1. postgresをコンテナで起動できるようにdocker-compose.ymlを作成
 2. username、password、hostをconfig/database.ymlに追加
 3. docker-compose up -d
 4. ./bin/rails db:createでDBを作成
 
-## Deviseの導入
+## Deviseの導入 cf. https://github.com/bmf-san/sandbox-rails-multi-tenant-architecture/pull/2
 cf.[hearcombo/devise](https://github.com/heartcombo/devise)を導入する。
 
 1. bundle add devise
@@ -36,7 +36,12 @@ cf.[hearcombo/devise](https://github.com/heartcombo/devise)を導入する。
 
 ## ActiveRecordMultiTenantの導入
 
+## Debugbarを導入
+[debugbar](https://debugbar.dev/docs/installation/)の手順通り導入。
+
 ## ToDoアプリを作成
+
+## Redisの導入
 
 ## Rubocopの導入
 
@@ -48,4 +53,9 @@ cf.[hearcombo/devise](https://github.com/heartcombo/devise)を導入する。
 
 ## Github ActionsでCIを導入
 
+## Reactを導入
+
+## N+1を検知・対応
+
 ## // TBD: Railsの機能をあれこれ使ってみる
+factory bot, decorator, i18n, rails engine, validation

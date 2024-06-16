@@ -89,6 +89,9 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    debugbar (0.3.3)
+      actioncable
+      rails
     devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -241,6 +244,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  debugbar
   devise (~> 4.9)
   importmap-rails
   jbuilder
