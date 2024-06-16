@@ -15,4 +15,11 @@ Rails.application.routes.draw do
   get "my" => "my#index"
 
   delete "my/delete_account" => "my#delete_account"
+
+  resources :posts do
+    resources :comments, only: :create
+    resource :like, only: [:create, :destroy]
+  end
+
+  resources :likes, only: :create
 end

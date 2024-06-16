@@ -1,0 +1,10 @@
+<h1>Posts</h1>
+<%= link_to 'New Post', new_post_path %>
+<% @posts.each do |post| %>
+  <h2><%= link_to post.title, post %></h2>
+  <p><%= post.content %></p>
+  <!-- コメントを表示するコードを追加 -->
+  <% post.comments.each do |comment| %>
+    <p><strong><%= comment.user.name %>:</strong> <%= comment.content %></p>
+  <% end %>
+<% end %>

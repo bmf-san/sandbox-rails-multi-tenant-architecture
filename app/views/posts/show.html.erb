@@ -1,0 +1,36 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+
+<% if current_user == @post.user %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%# FIXME: turboの都合なのかなぜか機能しない %>
+  <%= link_to 'Delete', post_path(@post), method: :delete %>
+<% end %>
+
+<% if current_user.liked?(@post) %>
+  <%= button_to 'Unlike', post_like_path(@post), method: :delete %>
+<% else %>
+  <%= button_to 'Like', post_like_path(@post) %>
+<% end %>
+
+<%= form_with model: [@post, @post.comments.build], local: true do |form| %>
+  <p>
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<% if @post.comments.exists? %>
+  <% @post.comments.each do |comment| %>
+    <%# FIXME: comment.user.inspectしてみると　なぜか空のオブジェクトが余分に追加されてしまう。%>
+    <% if comment.user.present? %>
+    <p><strong><%= comment.user.name %>:</strong> <%= comment.content %></p>
+    <% end %>
+  <% end %>
+<% else %>
+  <p><strong>Unknown User:</strong> No comments yet.</p>
+<% end %>
+<%= link_to 'Back', posts_path %>
