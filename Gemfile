@@ -72,3 +72,5 @@ gem "importmap-rails"
 gem "turbo-rails"
 
 gem "stimulus-rails"
+
+gem 'activerecord-multi-tenant'

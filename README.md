@@ -43,6 +43,7 @@ cf.[hearcombo/devise](https://github.com/heartcombo/devise)を導入する。
 CMSっぽいものを実装。
 
 ## N+1問題を解消
+CRUDのN+1を解消
 
 ## Redisの導入
 
