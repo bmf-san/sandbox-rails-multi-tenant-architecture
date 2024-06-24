@@ -1,6 +1,13 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[edit update destroy]
   before_action :set_post, only: %i[show edit update destroy]
+  set_current_tenant_through_filter # Required to opt into this behavior
+  before_action :set_tenant_as_tenant
+
+  def set_tenant_as_tenant
+    tenant = Tenant.find(current_user.tenant_id)
+    set_current_tenant(tenant)
+  end
 
   def index
     @posts = Post.preload(:comments)

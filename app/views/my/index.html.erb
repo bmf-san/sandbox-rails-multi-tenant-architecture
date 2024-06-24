@@ -1,4 +1,5 @@
 <h1>My Page</h1>
 <p>You're loggined as <%= current_user.name %></p>
+<p>You're  tenant is <%= current_user.tenant.name %></p>
 
 <%= link_to "Edit your user info", edit_user_registration_path %>

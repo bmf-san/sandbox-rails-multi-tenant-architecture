@@ -35,6 +35,33 @@ cf.[hearcombo/devise](https://github.com/heartcombo/devise)を導入する。
 7. rails db:migrate
 
 ## ActiveRecordMultiTenantの導入
+[active-record-multi-tenant](https://github.com/citusdata/activerecord-multi-tenant?tab=readme-ov-file)を導入。
+
+tenantsテーブルを作成。
+
+各テーブルにtenant_idを追加。
+
+各modelに以下を追加。
+
+```ruby
+  multi_tenant :tenant
+```
+
+tenant事にデータを制御したいcontrollerに以下を追加。（application_controllerなどに共通処理として用意したほうが良さそう。）
+
+```ruby
+  set_current_tenant_through_filter # Required to opt into this behavior
+  before_action :set_tenant_as_tenant
+
+  def set_tenant_as_tenant
+    tenant = Tenant.find(current_user.tenant_id)
+    set_current_tenant(tenant)
+  end
+```
+
+これで、tenant_idを都度意識してデータを参照したり、書き込む必要がなくなる。
+
+cf. [ActiverecordMultiTenant でマルチテナンシー](https://note.com/yks0406/n/n09c181400561)
 
 ## Debugbarを導入
 [debugbar](https://debugbar.dev/docs/installation/)の手順通り導入。
@@ -43,6 +70,11 @@ cf.[hearcombo/devise](https://github.com/heartcombo/devise)を導入する。
 CMSっぽいものを実装。
 
 ## N+1問題を解消
+CRUDのN+1を解消
+
+## Bitemporalの導入
+
+# Grapeの導入
 
 ## Redisの導入
 
