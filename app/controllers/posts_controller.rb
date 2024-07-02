@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.preload(:comments)
+    @all_posts = Post.ignore_valid_datetime
   end
 
   def show
