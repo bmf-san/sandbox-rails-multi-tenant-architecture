@@ -124,14 +124,38 @@ end
 Redisを導入してキャッシュストアとして使う。
 
 ## Rubocopの導入
+Rubocopを導入。
 
-## RSpecの導入
+```ruby
+group :development do
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+end
+```
 
-## RSpecでテストを書く
+```
+bundle exec rubocop --auto-gen-config
+```
+
+```
+bundle exec rubocop -A
+// or
+bundle exec rubocop --auto-correct
+
+bundle exec rubocop
+
+bundle exec rubocop --help
+```
+
+## RSpecの導入とテスト
+
+## Github ActionsでCIを導入
 
 ## Sidekiqの導入
 
-## Github ActionsでCIを導入
+## Spring導入
 
 ## Reactを導入
 
