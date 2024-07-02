@@ -150,6 +150,21 @@ bundle exec rubocop --help
 ```
 
 ## RSpecの導入とテスト
+```ruby
+  gem 'rspec-rails', '~> 6.1.0'
+  gem 'factory_bot_rails'
+  gem 'faker'
+```
+
+```
+rails generate rspec:install
+```
+
+```
+rails g rspec:model posts
+```
+
+## capybaraの導入
 
 ## Github ActionsでCIを導入
 

@@ -6,4 +6,6 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   include ActiveRecord::Bitemporal
+
+  validates :title, presence: true
 end
