@@ -59,6 +59,8 @@ GEM
       activemodel (= 7.1.3.4)
       activesupport (= 7.1.3.4)
       timeout (>= 0.4.0)
+    activerecord-bitemporal (5.2.0)
+      activerecord (>= 6.1)
     activerecord-multi-tenant (2.4.0)
       rails (>= 6)
     activestorage (7.1.3.4)
@@ -246,6 +248,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activerecord-bitemporal
   activerecord-multi-tenant
   bootsnap
   debug

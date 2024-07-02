@@ -1,5 +1,6 @@
 <h1>Posts</h1>
 <%= link_to 'New Post', new_post_path %>
+<h2>List</h2>
 <% @posts.each do |post| %>
   <h2><%= link_to post.title, post %></h2>
   <p><%= post.content %></p>
@@ -7,4 +8,16 @@
   <% post.comments.includes(:user).each do |comment| %>
     <p><strong><%= comment.user.name %>:</strong> <%= comment.content %></p>
   <% end %>
+<% end %>
+
+<h2>History</h2>
+<% @all_posts.each do |post| %>
+  <h2><%= link_to post.title, post %></h2>
+  <p><%= post.content %></p>
+  <p>
+    <span>valid_from<%= post.valid_from %></span>
+    <span>valid_to<%= post.valid_from %></span>
+    <span>transaction_from<%= post.valid_from %></span>
+    <span>transaction_to<%= post.valid_from %></span>
+  </p>
 <% end %>

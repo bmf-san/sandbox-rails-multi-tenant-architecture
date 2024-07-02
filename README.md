@@ -73,10 +73,20 @@ CMSっぽいものを実装。
 CRUDのN+1を解消
 
 ## Bitemporalの導入
+```ruby
+  gem 'bitemporal'
+```
+
+```ruby
+  class User < ApplicationRecord
+    include Bitemporal
+  end
+```
 
 # Grapeの導入
 
 ## Redisの導入
+
 
 ## Rubocopの導入
 
