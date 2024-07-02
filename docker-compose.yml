@@ -10,5 +10,13 @@ services:
     ports:
       - '5432:5432'
     restart: always
+  redis:
+    image: redis:6.2.6-alpine3.14
+    ports:
+      - '6379:6379'
+    restart: always
+    volumes:
+      - redis_volume:/data
 volumes:
   postgres_volume:
+  redis_volume:

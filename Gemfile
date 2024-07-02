@@ -78,3 +78,5 @@ gem 'activerecord-multi-tenant'
 gem 'activerecord-bitemporal'
 
 gem "grape"
+
+gem 'redis'
