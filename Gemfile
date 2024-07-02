@@ -76,3 +76,5 @@ gem "stimulus-rails"
 
 gem 'activerecord-multi-tenant'
 gem 'activerecord-bitemporal'
+
+gem "grape"

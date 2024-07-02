@@ -84,6 +84,41 @@ CRUDのN+1を解消
 ```
 
 # Grapeの導入
+```ruby
+gem 'grape`
+```
+
+```ruby
+# inflections.rb
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.acronym 'API'
+end
+```
+
+```ruby
+# config/routes.rb
+  mount API => '/'
+
+# app/api/api.rb
+class API < Grape::API
+  prefix 'api'
+
+  mount V1::Posts
+end
+
+# app/api/v1/posts.rb
+  module V1
+    class Posts < Grape::API
+      prefix 'api'
+      version 'v1', using: :path
+      format :json
+
+      get '/posts' do
+        Post.all
+      end
+    end
+  end
+```
 
 ## Redisの導入
 
