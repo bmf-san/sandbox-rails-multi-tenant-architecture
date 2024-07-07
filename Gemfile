@@ -50,6 +50,9 @@ group :development, :test do
   gem "faker"
   gem 'rspec-rails', '~> 6.1.0'
   gem 'factory_bot_rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'selenium-webdriver'
 end
 
 group :development do
