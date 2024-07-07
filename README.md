@@ -185,6 +185,13 @@ end
 ```
 
 ## Sidekiqの導入
+```ruby
+  gem 'sidekiq'
+```
+
+`rails g job sample`
+
+`bundle exec sidekiq`
 
 ## Spring導入
 ```ruby
@@ -192,8 +199,3 @@ end
 ```
 
 `bundle exec spring binstub --all`
-
-## Reactを導入
-
-## // TBD: Railsの機能をあれこれ使ってみる
-i18n, rails engine, validation
