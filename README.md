@@ -165,8 +165,24 @@ rails g rspec:model posts
 ```
 
 ## capybaraの導入
+```ruby
+  # Gemfile
+  gem 'capybara'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+```
 
-## Github ActionsでCIを導入
+```ruby
+# Gemfile
+require 'capybara/rspec`
+
+RSpec.configure do |config|
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :system
+  config.include Warden::Test::Helpers
+  config.include Capybara::DSL
+end
+```
 
 ## Sidekiqの導入
 
@@ -175,4 +191,4 @@ rails g rspec:model posts
 ## Reactを導入
 
 ## // TBD: Railsの機能をあれこれ使ってみる
-factory bot, decorator, i18n, rails engine, validation
+i18n, rails engine, validation
