@@ -187,6 +187,11 @@ end
 ## Sidekiqの導入
 
 ## Spring導入
+```ruby
+  gem 'spring'
+```
+
+`bundle exec spring binstub --all`
 
 ## Reactを導入
 
