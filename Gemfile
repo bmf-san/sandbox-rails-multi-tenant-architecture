@@ -91,3 +91,5 @@ gem 'activerecord-bitemporal'
 gem "grape"
 
 gem 'redis'
+
+gem 'sidekiq'

@@ -5,5 +5,7 @@ class HomeController < ApplicationController
     Rails.cache.write('foo', 'bar')
     @cached_value = Rails.cache.read('foo')
     Rails.logger.info("Cached value: #{@cached_value}")
+
+    ExampleJob.perform_later
   end
 end
